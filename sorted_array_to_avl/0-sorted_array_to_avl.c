@@ -65,10 +65,14 @@ avl_t *SortedArrayToAVL(int *array, size_t start, size_t end, avl_t *root)
 		return (NULL);
 
 	if (mid != start)
+	{
 		new_node->left = SortedArrayToAVL(array, start, mid - 1, new_node);
+	}
 
 	if (mid != end)
+	{
 		new_node->right = SortedArrayToAVL(array, mid + 1, end, new_node);
+	}
 
 	return (new_node);
 }
